@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+pyarrow
+requests
+python-dotenv
+streamlit
+duckdb
+deltalake
+plotly
+httpx
+pytest
+requests-mock
