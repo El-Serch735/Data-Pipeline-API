@@ -35,7 +35,7 @@ if st.sidebar.button("🔄 Actualizar datos"):
         except Exception as e:
             st.sidebar.error(f"Error de conexión: {e}")
 
-st.sidebar.divider()
+#st.sidebar.divider()
 limit = st.sidebar.number_input("Registros a traer", 10, 5000, 500)
 facility_filter = st.sidebar.text_input("Filtrar por Planta")
 
