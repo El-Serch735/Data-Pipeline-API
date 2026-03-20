@@ -8,7 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 AUTH_KEY = os.getenv("APP_AUTH_KEY")
 
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+#API_URL = os.getenv("API_URL", "http://localhost:8000") for local testing
+API_URL = os.getenv("API_URL", "https://data-pipeline-api-511t.onrender.com") # URL de la API desplegada
 
 st.set_page_config(page_title="Nuclear Outages Monitor", layout="wide")
 st.title("☢️ Nuclear Outages Dashboard")
