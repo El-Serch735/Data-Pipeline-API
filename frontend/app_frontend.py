@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 AUTH_KEY = os.getenv("APP_AUTH_KEY")
 
+API_URL = os.getenv("API_URL", "http://localhost:8000")
+
 st.set_page_config(page_title="Nuclear Outages Monitor", layout="wide")
 st.title("☢️ Nuclear Outages Dashboard")
 
@@ -20,7 +22,7 @@ if st.sidebar.button("🔄 Actualizar datos"):
     
     with st.status("Solicitando actualización...", expanded=True) as status:
         try:
-            res = requests.post("http://localhost:8000/refresh", headers=auth_header)
+            res = requests.post(f"{API_URL}/refresh", headers=auth_header)
             if res.status_code == 200:
                 st.toast("✅ Proceso iniciado", icon='🚀')
                 status.update(label="Actualización en curso (segundo plano)", state="complete")
@@ -42,7 +44,7 @@ try:
     if facility_filter:
         params["facility"] = facility_filter
         
-    response = requests.get("http://localhost:8000/data", params=params)
+    response = requests.get(f"{API_URL}/data", params=params)
     
     if response.status_code == 200:
         data_json = response.json().get("data", [])

@@ -59,11 +59,14 @@ pip install -r requirements.txt
 
 * **Automated Tests:** 5 test cases covering critical pipeline parts.
 
+* **Cloud deployment:** URL of the website.
+
 ## Assumtions made
 
 * **Granularidad:** The assumtion of data frequecy is daily because it is a standard for reports.
 * **Timezone:** Time periods are standard EIA strings (YYYY-MM-DD) in order to maintain source integrity.
 * **Null handle:** Logs where outage field is null or invalid it is assumed that the value is 0.
+* **Cloud deployent:** Due to the render plan is free, the user must reload all the data in order to test the application.
 
 ## Data Model
 
